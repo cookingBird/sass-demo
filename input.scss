@@ -1,0 +1,16 @@
+@mixin size($size: "medium") {
+  &[size=#{$size}]{
+    @content; // 插入具体的内容
+  }
+}
+
+// 使用混入，并插入具体的内容
+.container {
+  width: 100%;
+  @include size {
+    font-size:medium;
+  }
+  @include size("large") {
+    font-size: large;
+  }
+}

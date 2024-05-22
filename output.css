@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+}
+.container[size=medium] {
+  font-size: medium;
+}
+.container[size=large] {
+  font-size: large;
+}
+
+/*# sourceMappingURL=output.css.map */
