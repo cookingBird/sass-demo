@@ -6,11 +6,14 @@
   }
 }
 
-@mixin size-of-fontSize($base: 1rem, $greater: 1.3, $s...) {
-  $index: 1;
+@mixin size-of-font-size($greater: 1.25rem, $s...) {
+  $base: 1rem;
+  $index: 0;
   @each $size in $s {
+    $font-size: $base + ($greater * $index);
     &[data-size="#{$size}"] {
-      font-size: $base * $greater * $index;
+      font-size: $font-size;
+      line-height: $font-size * $line-height-factor;
     }
     $index: $index + 1;
   }

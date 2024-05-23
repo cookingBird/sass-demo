@@ -17,13 +17,16 @@ body[data-theme=dark] {
   color: #eee;
 }
 body[data-size=small] {
-  font-size: 21px;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 body[data-size=medium] {
-  font-size: 42px;
+  font-size: 2.5rem;
+  line-height: 3.75rem;
 }
 body[data-size=large] {
-  font-size: 63px;
+  font-size: 4rem;
+  line-height: 6rem;
 }
 
 /*# sourceMappingURL=output.css.map */
