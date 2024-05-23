@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Document</title>
+  <link
+    href="./output.css"
+    rel="stylesheet"
+  />
+  <link
+    href="./nomalize.css"
+    rel="stylesheet"
+  />
+  <style>
+    .selector-list {
+      font-size: medium;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      display: flex;
+      gap: 8px;
+      padding: 6px;
+    }
+  </style>
+</head>
+
+<body
+  data-theme="light"
+  data-size="medium"
+>
+  <div class="selector-list">
+    <div class="selector">
+      <span>SIZE：</span>
+      <select
+        name="sizes"
+        id="size-select"
+      >
+        <option value="small">small</option>
+        <option
+          value="medium"
+          selected
+        >medium</option>
+        <option value="large">large</option>
+      </select>
+    </div>
+    <div class="selector">
+      <span>THEME：</span>
+      <select
+        name="themes"
+        id="theme-select"
+      >
+        <option
+          value="light"
+          selected
+        >light</option>
+        <option value="dark">dark</option>
+      </select>
+    </div>
+  </div>
+  <span>Hello World</span>
+
+  <script>
+    document.querySelector(".selector-list").addEventListener("click",(e) => {
+      const id = e.target.getAttribute('id');
+      const value = e.target.value;
+      console.log('[ id ] >',id);
+      if(id === 'size-select') {
+        const preVal = document.body.getAttribute('data-size');
+        if(value !== preVal) {
+          document.body.setAttribute('data-size',value)
+        }
+      }
+      if(id === 'theme-select') {
+        const preVal = document.body.getAttribute('data-theme');
+        document.body.setAttribute('data-theme',value)
+      }
+    })
+  </script>
+</body>
+
+</html>

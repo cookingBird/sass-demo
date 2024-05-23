@@ -1,16 +1,25 @@
-@mixin size($size: "medium") {
-  &[size=#{$size}]{
-    @content; // 插入具体的内容
-  }
+@import "./variable.scss";
+@import "./tool.scss";
+
+:root {
+  height: 100%;
 }
 
-// 使用混入，并插入具体的内容
-.container {
-  width: 100%;
-  @include size {
-    font-size:medium;
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include theme("light", "dark") using ($theme) {
+    @if $theme == light {
+      background-color: #fff;
+      color: #000;
+    }
+    @if $theme == dark {
+      background-color: #000;
+      color: #eee;
+    }
   }
-  @include size("large") {
-    font-size: large;
-  }
+
+  @include size-of-fontSize(14px, 1.5, $size...);
 }

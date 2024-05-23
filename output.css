@@ -1,11 +1,29 @@
-.container {
-  width: 100%;
+:root {
+  height: 100%;
 }
-.container[size=medium] {
-  font-size: medium;
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.container[size=large] {
-  font-size: large;
+body[data-theme=light] {
+  background-color: #fff;
+  color: #000;
+}
+body[data-theme=dark] {
+  background-color: #000;
+  color: #eee;
+}
+body[data-size=small] {
+  font-size: 21px;
+}
+body[data-size=medium] {
+  font-size: 42px;
+}
+body[data-size=large] {
+  font-size: 63px;
 }
 
 /*# sourceMappingURL=output.css.map */
