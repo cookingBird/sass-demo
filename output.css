@@ -8,7 +8,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-body[data-theme=light] {
+body[data-theme=light] * {
   background-color: #fff;
   color: #000;
 }
@@ -27,6 +27,10 @@ body[data-size=medium] {
 body[data-size=large] {
   font-size: 4rem;
   line-height: 6rem;
+}
+
+[data-size=small] div {
+  font-size: small;
 }
 
 /*# sourceMappingURL=output.css.map */

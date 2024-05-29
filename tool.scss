@@ -1,8 +1,13 @@
-@mixin size($s...) {
+@mixin size-sequence($s...) {
   @each $size in $s {
-    &[data-size="#{$size}"] {
+    #{if(&,"&[data-size="#{$size}"]","[data-size="#{$size}"]")} {
       @content ($size);
     }
+  }
+}
+@mixin size-selector($size, $selector) {
+  #{if(&, "&[data-size='#{$size}']#{$selector}", "[data-size='#{$size}']#{$selector}")} {
+    @content;
   }
 }
 
@@ -11,7 +16,7 @@
   $index: 0;
   @each $size in $s {
     $font-size: $base + ($greater * $index);
-    &[data-size="#{$size}"] {
+    #{if(&,"&[data-size="#{$size}"]","[data-size="#{$size}"]")} {
       font-size: $font-size;
       line-height: $font-size * $line-height-factor;
     }
@@ -21,7 +26,7 @@
 
 @mixin theme($themes...) {
   @each $theme in $themes {
-    &[data-theme="#{$theme}"] {
+    #{if(&,"&[data-theme="#{$theme}"]","::root[data-theme="#{$theme}"]")} {
       @content ($theme);
     }
   }
